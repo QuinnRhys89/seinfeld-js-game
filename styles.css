@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+img{
+    width: 100%;
+}
+
+.seinfeld-logo{
+    width: 300px;
+}
+
+.active{
+    border: 2px solid red;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1{
+    margin: 200px 0;
+    font-weight: 400;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    width: 500px;
+}
+
+button{
+    padding: 10px;
+    height: 80px;
+    border: 1px solid black;
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+button:first-child{
+    margin-left: 0;
+}
+
+.quote{
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.quote-container{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
