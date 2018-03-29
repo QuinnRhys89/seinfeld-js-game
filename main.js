@@ -35,19 +35,30 @@ function getQuote(){
         const episode = selectedQuotes[random].episode;
         const finalQuote = `${randomQuote} - ${character} Season ${season}, Episode ${episode}`;
 
-        console.log(character);
+        // display finalQuote onto the page issuing innerHTML
+        document.getElementById('text').innerHTML = finalQuote;
 
-        // function to highlight answer
+        // function to highlight answer once the quote has been display
         function showAnswer(param) {
             
             const lowercaseCharacter = param.toLowerCase();
-            document.querySelector(`#${lowercaseCharacter}`).classList.add('result'); 
+            const btncontainer = document.querySelector('button-container');
+
+            const result = document.querySelector(`#${lowercaseCharacter}`)
+            for (let i = 0; i < result.parentNode.children.length; i++) {
+                result.parentNode.children[i].classList.remove('result');
+            }
+            const highlightedResult = result.classList.add('result'); 
 
             console.log(lowercaseCharacter);
+
         }
 
-        document.getElementById('text').innerHTML = finalQuote;
+        // calling setTimeout function which has showAnswer as parameter
+        // showAnswer has character as a argument in the call
+        // showAnswer runs after 3000 (3 secs)
         setTimeout(showAnswer(character), 3000);
+
     });
 }
 
