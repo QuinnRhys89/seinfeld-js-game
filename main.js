@@ -48,7 +48,12 @@ function getQuote(){
             for (let i = 0; i < result.parentNode.children.length; i++) {
                 result.parentNode.children[i].classList.remove('result');
             }
-            const highlightedResult = result.classList.add('result'); 
+
+            setTimeout(showResult, 5000)
+
+            function showResult(){
+                const highlightedResult = result.classList.add('result'); 
+            }
 
             console.log(lowercaseCharacter);
 
@@ -57,7 +62,7 @@ function getQuote(){
         // calling setTimeout function which has showAnswer as parameter
         // showAnswer has character as a argument in the call
         // showAnswer runs after 3000 (3 secs)
-        setTimeout(showAnswer(character), 3000);
+        showAnswer(character);
 
     });
 }
