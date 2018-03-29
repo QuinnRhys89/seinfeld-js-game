@@ -49,19 +49,17 @@ function getQuote(){
                 result.parentNode.children[i].classList.remove('result');
             }
 
-            setTimeout(showResult, 5000)
-
+            // adds a result class to the highlightedResult
             function showResult(){
                 const highlightedResult = result.classList.add('result'); 
             }
 
-            console.log(lowercaseCharacter);
-
+            // calling setTimeout function which has showResult as parameter
+            // showAnswer runs after 3000 (3 secs)
+            setTimeout(showResult, 5000);
         }
 
-        // calling setTimeout function which has showAnswer as parameter
-        // showAnswer has character as a argument in the call
-        // showAnswer runs after 3000 (3 secs)
+        // Call showAnswer function
         showAnswer(character);
 
     });
@@ -75,6 +73,7 @@ function getQuote(){
 // function to add active class to user selection
 function selectChoice(e){
     // console.log("selected");
+    e.preventDefault;
     console.log(e.target);
     // if a button is selected (e.target) then loop through all of the children (buttons) and remove the class of active
     if(e.target){
