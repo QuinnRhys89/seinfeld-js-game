@@ -5,15 +5,18 @@ const george = document.getElementById('george');
 const newman = document.getElementById('newman');
 const frank = document.getElementById('frank');
 const quoteButton = document.querySelector('#quote-btn');
+const button = document.querySelectorAll('.answer-btn');
+
 
 // event listener for quote button
 quoteButton.addEventListener('click', function(e){
-    getQuote();
+    getQuote(e);
 
 });
 
 // Function to Generate random quote from API and update onto page
-function getQuote(){
+function getQuote(e){
+    e.preventDefault;
     // Ajax call to Seinfeld API
     $.ajax({
         url: "https://seinfeld-quotes.herokuapp.com/quotes",
@@ -38,6 +41,7 @@ function getQuote(){
         // display finalQuote onto the page issuing innerHTML
         document.getElementById('text').innerHTML = finalQuote;
 
+      
         // function to highlight answer once the quote has been display
         function showAnswer(param) {
             
@@ -52,29 +56,52 @@ function getQuote(){
             // adds a result class to the highlightedResult
             function showResult(){
                 const highlightedResult = result.classList.add('result'); 
+                // const time = new Date().getTime();
+
+                // console.log(time);
+
+                const twoClasses = document.querySelector('.active.result');
+
+                let counter = document.querySelector(".counter-number");
+                if (twoClasses) {
+                    counter.innerHTML++;
+                } else{
+                    counter.innerHTML -- 
+                }
+
+               
+                // containerBtn.classList.remove('.active');
             }
 
             // calling setTimeout function which has showResult as parameter
             // showAnswer runs after 3000 (3 secs)
-            setTimeout(showResult, 5000);
+            setTimeout(showResult, 10000);  
+
+            
+            // const buttonTest = document.querySelectorAll('.answer-btn');
+            // for (let i = 0; i < buttonTest.length; i++) {
+            //     buttonTest[i].classList.remove('.active');
+            // }
+            // buttonTest.classList.remove('.active');
+            // console.log(buttonTest);
+          
+     
         }
 
         // Call showAnswer function
         showAnswer(character);
 
+
     });
 }
 
 
-
-
-
-
 // function to add active class to user selection
 function selectChoice(e){
-    // console.log("selected");
+    
+    // e.preventDefault allows the selection to clear everytime a quote is generated
     e.preventDefault;
-    console.log(e.target);
+   
     // if a button is selected (e.target) then loop through all of the children (buttons) and remove the class of active
     if(e.target){
         for(let i = 0; i < e.target.parentNode.children.length; i++){
@@ -82,11 +109,17 @@ function selectChoice(e){
         }
     }
     // add the class of active to selected button
-    e.target.classList.add('active');
+    e.target.classList.add('active');  
+   
 }
 
 
 
+
+// if the element has a class of active and result then add a point to the counter
+
+
+// All Event Listeners
 elaine.addEventListener("click", selectChoice);
 george.addEventListener("click", selectChoice);
 jerry.addEventListener("click", selectChoice);
@@ -97,11 +130,6 @@ frank.addEventListener("click", selectChoice);
 
 
 
-// function getResult() {
-//     document.getElementById('elaine').classList.add('active');
-// }
-
-// setTimeout(getResult, 3000);
 
 
 
