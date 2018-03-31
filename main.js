@@ -10,6 +10,7 @@ const timer = document.querySelector('#seconds');
 const gif = document.querySelector('#gif');
 
 
+
 // event listener for quote button
 quoteButton.addEventListener('click', getQuote);
 
@@ -108,7 +109,10 @@ function showAnswer(param) {
 
             const randomItem = firstGif[Math.floor(Math.random() * firstGif.length)];
 
-            // const randomGif = Math.floor(Math.random() * (firstGif.length));
+            const source = randomItem.embed_url;
+            gif.src = source;
+
+            console.log(source);
 
             console.log(randomItem);
         });
@@ -127,7 +131,11 @@ function showAnswer(param) {
 
             const randomItem = firstGif[Math.floor(Math.random() * firstGif.length)];
 
+            const source = randomItem.embed_url;
+            gif.src = source;
+
             console.log(randomItem);
+            console.log(source);
 
 
         });
@@ -144,6 +152,9 @@ function showAnswer(param) {
             firstGif = jerryData.map(gif => gif);
 
             const randomItem = firstGif[Math.floor(Math.random() * firstGif.length)];
+            const source = randomItem.embed_url;
+            gif.src = source;
+            // console.log(source);
 
             console.log(randomItem);
 
@@ -161,6 +172,9 @@ function showAnswer(param) {
             firstGif = georgeData.map(gif => gif);
 
             const randomItem = firstGif[Math.floor(Math.random() * firstGif.length)];
+            const source = randomItem.embed_url;
+            gif.src = source;
+            // console.log(source);
 
             console.log(randomItem);
 
@@ -178,6 +192,9 @@ function showAnswer(param) {
             firstGif = frankData.map(gif => gif);
 
             const randomItem = firstGif[Math.floor(Math.random() * firstGif.length)];
+            const source = randomItem.embed_url;
+            gif.src = source;
+            // console.log(source);
 
             console.log(randomItem);
 
@@ -196,6 +213,8 @@ function showAnswer(param) {
             firstGif = newmanData.map(gif => gif);
 
             const randomItem = firstGif[Math.floor(Math.random() * firstGif.length)];
+            const source = randomItem.embed_url;
+            gif.src = source;
 
             console.log(randomItem);
 
