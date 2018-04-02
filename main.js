@@ -94,7 +94,7 @@ function showAnswer(param) {
 
     const kramerGif = "http://api.giphy.com/v1/gifs/search?q=cosmo+kramer&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=100";
 
-    const frankGif = "http://api.giphy.com/v1/gifs/search?q=frank+costanza&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=10";
+    const frankGif = "http://api.giphy.com/v1/gifs/search?q=frank+costanza+seinfeld&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=10";
 
     const newmanGif = "http://api.giphy.com/v1/gifs/search?q=newman+seinfeld&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=10";
 
