@@ -11,7 +11,10 @@ const gif = document.querySelector('#gif');
 const quote = document.querySelector('#text');
 const apiKey = "6htGmGphbh72Smi9RnaAh8E7hFZQwtN0";
 
-
+// Smooth Scroll
+$('a').smoothScroll({
+    offset: 0
+});
 
 // event listener for quote button
 quoteButton.addEventListener('click', getQuote);
@@ -19,11 +22,11 @@ quoteButton.addEventListener('click', getQuote);
 // Function to Generate random quote from API and update onto page
 function getQuote(e){
     e.preventDefault;
-
+    // Reset for Button and Gifs
     $(gif).fadeOut();
     $(timer).fadeIn(2000);
     $(quote).show();
-    // document.querySelector('active').hide();
+    $(button).removeClass('result active');
 
    
     // Ajax call to Seinfeld API
@@ -55,7 +58,7 @@ function getQuote(e){
         const interval = setInterval(function () {
             countdown--;
             timer.innerHTML = countdown;
-            
+
             if (countdown === 0) {
                 clearInterval(interval);
                 // Call showAnswer function
