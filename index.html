@@ -4,50 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Quotable Seinfeld</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,400i,700" rel="stylesheet">
 </head>
 <body>
     <main>
-        <img class="seinfeld-logo" src="assets/seinfeld-logo.png" alt="seinfeld logo">
-        <h1>Seinfeld Quote Generator</h1>
+        <!-- Wrapper -->
+        <div class="wrapper">
+                <!-- Header -->
+                <header>
+                    <a href="#">How To Play</a>
+                </header>
 
-        <!-- Points Counter -->
-        <div class="score">
-            <p><span class="score-number">0</span> Points</p>
-        </div>
-
-        <!-- Timer -->
-        <div class="timer">
-            <span id="seconds">5</span>
-        </div>
-
-        <iframe id="gif" src="https://giphy.com/embed/Xg5DdPfnvLd3W" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-        <p>
-            <a href="https://giphy.com/gifs/Xg5DdPfnvLd3W">via GIPHY</a>
-        </p>
-
-        <!-- Random Quote -->
-        <div class="quote-container">
-            <h2 id="text"></h2>
-        </div>
-
+                <div class="main-logo">
+                    <div class="seinfeld-logo">
+                        <img src="assets/seinfeld-logo.png" alt="seinfeld logo">
+                    </div>
+                    <h1>Quote Quiz</h1>
+                </div>
         
-        <button id="quote-btn">Get Quote</button>
+                <!-- Points Counter -->
+                <div class="score">
+                    <p><span class="score-number">0</span> Points</p>
+                </div>
         
-        <!-- User Selection -->
-        <div class="button-container">
-            <button id="elaine" class="answer-btn">Elaine</button>
-            <button id="george" class="answer-btn">George</button>
-            <button id="kramer" class="answer-btn">Kramer</button>
-            <button id="jerry" class="answer-btn">Jerry</button>
-            <button id="newman" class="answer-btn">Newman</button>
-            <button id="frank" class="answer-btn">Frank</button>
-        </div>
-    </main>
+                <!-- Timer -->
+                <div class="timer">
+                    <p><span id="seconds"></span></p>
+                </div>
+        
+                <iframe id="gif" src="https://giphy.com/embed/Xg5DdPfnvLd3W" width="480" height="360" frameBorder="0" allowFullScreen></iframe>
+                <p>
+                    <a href="https://giphy.com/gifs/Xg5DdPfnvLd3W">via GIPHY</a>
+                </p>
+        
+                <!-- Random Quote -->
+                <div class="quote-container">
+                    <i class="fas fa-quote-left"></i><quoteblock id="text"></quoteblock>
+                </div>
+        
+                
+                <button id="quote-btn">Get Quote</button>
+                
+                <!-- User Selection -->
+                <div class="button-container">
+                    <button id="elaine" class="answer-btn">Elaine</button>
+                    <button id="george" class="answer-btn">George</button>
+                    <button id="kramer" class="answer-btn">Kramer</button>
+                    <button id="jerry" class="answer-btn">Jerry</button>
+                    <button id="newman" class="answer-btn">Newman</button>
+                    <button id="frank" class="answer-btn">Frank</button>
+                </div>
+
+
+                <footer>
+                    <p class="credits">Quotable Seinfeld was made using <a href="https://seinfeld-quotes.herokuapp.com/">Seinfeld Quotes API</a> and <a href="https://developers.giphy.com/docs/">Giphy API</a></p>
+                </footer>
+            </div>
+            <!-- ./wrapper -->
+        </main>
+        
     
     <!-- jQuery must always be above -->
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
     <script src="main.js"></script>
 

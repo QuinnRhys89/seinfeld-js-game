@@ -40,7 +40,7 @@ function getQuote(e){
         const finalQuote = `${randomQuote} - ${character} Season ${season}, Episode ${episode}`;
 
         // display finalQuote onto the page issuing innerHTML
-        document.getElementById('text').innerHTML = finalQuote;
+        document.getElementById('text').innerHTML = randomQuote;
 
         let countdown = 5;
 
@@ -51,14 +51,11 @@ function getQuote(e){
                 clearInterval(interval);
                 // Call showAnswer function
                 showAnswer(character);
-               
+                  
             }
             console.log(countdown);
 
-        }, 1000);
-
-    
-        
+        }, 1000); 
     });
 }
 
@@ -70,15 +67,15 @@ function showAnswer(param) {
     const btncontainer = document.querySelector('button-container');
     const result = document.querySelector(`#${lowercaseCharacter}`);
     
-    const elaineGif = "http://api.giphy.com/v1/gifs/search?q=elaine+benice+seinfeld&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=10";
+    const elaineGif = "http://api.giphy.com/v1/gifs/search?q=elaine+benes+julia+louis-dreyfus&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=100";
 
-    const jerryGif = "http://api.giphy.com/v1/gifs/search?q=jerry+seinfeld+seinfeld&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=10";
+    const jerryGif = "http://api.giphy.com/v1/gifs/search?q=jerry+seinfeld&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=100";
     
-    const georgeGif = "http://api.giphy.com/v1/gifs/search?q=george+costanza+seinfeld&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=10";
+    const georgeGif = "http://api.giphy.com/v1/gifs/search?q=george+costanza+jason+alexander&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=100";
 
-    const kramerGif = "http://api.giphy.com/v1/gifs/search?q=cosmo+kramer+seinfeld&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=10";
+    const kramerGif = "http://api.giphy.com/v1/gifs/search?q=cosmo+kramer&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=100";
 
-    const frankGif = "http://api.giphy.com/v1/gifs/search?q=frank+costanza+seinfeld&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=10";
+    const frankGif = "http://api.giphy.com/v1/gifs/search?q=frank+costanza&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=10";
 
     const newmanGif = "http://api.giphy.com/v1/gifs/search?q=newman+seinfeld&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=10";
 
@@ -108,9 +105,11 @@ function showAnswer(param) {
             firstGif = elaineData.map(gif => gif);
 
             const randomItem = firstGif[Math.floor(Math.random() * firstGif.length)];
-
+            $(randomItem).fadeIn();
             const source = randomItem.embed_url;
             gif.src = source;
+
+
 
             console.log(source);
 
