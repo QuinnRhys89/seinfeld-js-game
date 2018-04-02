@@ -9,6 +9,7 @@ const button = document.querySelectorAll('.answer-btn');
 const timer = document.querySelector('#seconds');
 const gif = document.querySelector('#gif');
 const quote = document.querySelector('#text');
+const citation = document.querySelector('.citation');
 const apiKey = "6htGmGphbh72Smi9RnaAh8E7hFZQwtN0";
 
 // Smooth Scroll
@@ -22,6 +23,7 @@ quoteButton.addEventListener('click', getQuote);
 // Function to Generate random quote from API and update onto page
 function getQuote(e){
     e.preventDefault;
+
     // Reset for Button and Gifs
     $(gif).fadeOut();
     $(timer).fadeIn(2000);
@@ -48,25 +50,31 @@ function getQuote(e){
         const character = selectedQuotes[random].author;
         const season = selectedQuotes[random].season;
         const episode = selectedQuotes[random].episode;
-        const finalQuote = `${randomQuote} - ${character} Season ${season}, Episode ${episode}`;
+        const finalQuote = `- ${character}, Season ${season}, Episode ${episode}`;
 
         // display finalQuote onto the page issuing innerHTML
         quote.innerHTML = randomQuote;
+        $('.fa-quote-left').show('.fa-quote-left');
+        
 
-        let countdown = 11;
-
-        const interval = setInterval(function () {
-            countdown--;
-            timer.innerHTML = countdown;
-
-            if (countdown === 0) {
-                clearInterval(interval);
-                // Call showAnswer function
-                showAnswer(character); 
-                $(timer).fadeOut(1000); 
-                $(quote).hide();
-            }
-        }, 1000); 
+        setTimeout(function(){
+            let countdown = 6;
+    
+            const interval = setInterval(function () {
+                countdown--;
+                timer.innerHTML = countdown;
+                
+    
+                if (countdown === 0) {
+                    clearInterval(interval);
+                    showAnswer(character); 
+                    $(timer).fadeOut(1000);
+                    $(quote).hide(quote);
+                    $('.fa-quote-left').hide('.fa-quote-left');
+                    // citation.innerHTML = finalQuote;
+                }
+            }, 1000); 
+        }), 1000;
     });
 }
 
