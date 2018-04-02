@@ -29,6 +29,7 @@ function getQuote(e){
     $(timer).fadeIn(2000);
     $(quote).show();
     $(button).removeClass('result active');
+    
 
    
     // Ajax call to Seinfeld API
@@ -86,17 +87,17 @@ function showAnswer(param) {
     const btncontainer = document.querySelector('button-container');
     const result = document.querySelector(`#${lowercaseCharacter}`);
     
-    const elaineGif = "http://api.giphy.com/v1/gifs/search?q=elaine+benes+julia+louis-dreyfus&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=100";
+    const elaineGif = "https://api.giphy.com/v1/gifs/search?q=elaine+benes+julia+louis-dreyfus&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=100";
 
-    const jerryGif = "http://api.giphy.com/v1/gifs/search?q=jerry+seinfeld&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=100";
+    const jerryGif = "https://api.giphy.com/v1/gifs/search?q=jerry+seinfeld&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=100";
     
-    const georgeGif = "http://api.giphy.com/v1/gifs/search?q=george+costanza+jason+alexander&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=100";
+    const georgeGif = "https://api.giphy.com/v1/gifs/search?q=george+costanza+jason+alexander&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=100";
 
-    const kramerGif = "http://api.giphy.com/v1/gifs/search?q=cosmo+kramer&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=100";
+    const kramerGif = "https://api.giphy.com/v1/gifs/search?q=cosmo+kramer&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=100";
 
-    const frankGif = "http://api.giphy.com/v1/gifs/search?q=frank+costanza+seinfeld&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=10";
+    const frankGif = "https://api.giphy.com/v1/gifs/search?q=frank+costanza+seinfeld&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=10";
 
-    const newmanGif = "http://api.giphy.com/v1/gifs/search?q=newman+seinfeld&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=10";
+    const newmanGif = "https://api.giphy.com/v1/gifs/search?q=newman+seinfeld&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=10";
 
     if(lowercaseCharacter === "elaine"){
        getElaine();
