@@ -59,20 +59,23 @@ function getQuote(e){
         
 
         setTimeout(function(){
-            let countdown = 6;
+            let countdown = 11;
+            $(citation).hide(finalQuote);
     
             const interval = setInterval(function () {
                 countdown--;
                 timer.innerHTML = countdown;
+               
                 
     
                 if (countdown === 0) {
                     clearInterval(interval);
                     showAnswer(character); 
                     $(timer).fadeOut(1000);
-                    $(quote).hide(quote);
+                    // $(quote).hide(quote);
                     $('.fa-quote-left').hide('.fa-quote-left');
-                    // citation.innerHTML = finalQuote;
+                    $(citation).show(finalQuote);
+                    citation.innerHTML = finalQuote;
                 }
             }, 1000); 
         }), 1000;
@@ -87,13 +90,13 @@ function showAnswer(param) {
     const btncontainer = document.querySelector('button-container');
     const result = document.querySelector(`#${lowercaseCharacter}`);
     
-    const elaineGif = "https://api.giphy.com/v1/gifs/search?q=elaine+benes+julia+louis-dreyfus&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=100";
+    const elaineGif = "https://api.giphy.com/v1/gifs/search?q=elaine+benes+julia+louis-dreyfus&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=20";
 
-    const jerryGif = "https://api.giphy.com/v1/gifs/search?q=jerry+seinfeld&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=100";
+    const jerryGif = "https://api.giphy.com/v1/gifs/search?q=jerry+seinfeld&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=20";
     
-    const georgeGif = "https://api.giphy.com/v1/gifs/search?q=george+costanza+jason+alexander&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=100";
+    const georgeGif = "https://api.giphy.com/v1/gifs/search?q=george+costanza+jason+alexander&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=20";
 
-    const kramerGif = "https://api.giphy.com/v1/gifs/search?q=cosmo+kramer&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=100";
+    const kramerGif = "https://api.giphy.com/v1/gifs/search?q=cosmo+kramer&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=20";
 
     const frankGif = "https://api.giphy.com/v1/gifs/search?q=frank+costanza+seinfeld&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=10";
 
