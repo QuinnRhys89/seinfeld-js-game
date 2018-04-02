@@ -8,6 +8,8 @@ const quoteButton = document.querySelector('#quote-btn');
 const button = document.querySelectorAll('.answer-btn');
 const timer = document.querySelector('#seconds');
 const gif = document.querySelector('#gif');
+const quote = document.querySelector('#text');
+const apiKey = "6htGmGphbh72Smi9RnaAh8E7hFZQwtN0";
 
 
 
@@ -17,6 +19,12 @@ quoteButton.addEventListener('click', getQuote);
 // Function to Generate random quote from API and update onto page
 function getQuote(e){
     e.preventDefault;
+
+    $(gif).fadeOut();
+    $(timer).fadeIn(2000);
+    $(quote).show();
+    // document.querySelector('active').hide();
+
    
     // Ajax call to Seinfeld API
     $.ajax({
@@ -40,21 +48,21 @@ function getQuote(e){
         const finalQuote = `${randomQuote} - ${character} Season ${season}, Episode ${episode}`;
 
         // display finalQuote onto the page issuing innerHTML
-        document.getElementById('text').innerHTML = randomQuote;
+        quote.innerHTML = randomQuote;
 
-        let countdown = 5;
+        let countdown = 11;
 
         const interval = setInterval(function () {
             countdown--;
             timer.innerHTML = countdown;
+            
             if (countdown === 0) {
                 clearInterval(interval);
                 // Call showAnswer function
-                showAnswer(character);
-                  
+                showAnswer(character); 
+                $(timer).fadeOut(1000); 
+                $(quote).hide();
             }
-            console.log(countdown);
-
         }, 1000); 
     });
 }
@@ -108,12 +116,7 @@ function showAnswer(param) {
             $(randomItem).fadeIn();
             const source = randomItem.embed_url;
             gif.src = source;
-
-
-
-            console.log(source);
-
-            console.log(randomItem);
+            $(gif).fadeIn(2000);
         });
     }
 
@@ -132,11 +135,7 @@ function showAnswer(param) {
 
             const source = randomItem.embed_url;
             gif.src = source;
-
-            console.log(randomItem);
-            console.log(source);
-
-
+            $(gif).fadeIn(2000);
         });
     }
 
@@ -153,10 +152,7 @@ function showAnswer(param) {
             const randomItem = firstGif[Math.floor(Math.random() * firstGif.length)];
             const source = randomItem.embed_url;
             gif.src = source;
-            // console.log(source);
-
-            console.log(randomItem);
-
+            $(gif).fadeIn(2000);
         });
     }
 
@@ -173,10 +169,7 @@ function showAnswer(param) {
             const randomItem = firstGif[Math.floor(Math.random() * firstGif.length)];
             const source = randomItem.embed_url;
             gif.src = source;
-            // console.log(source);
-
-            console.log(randomItem);
-
+            $(gif).fadeIn(2000);
         });
     }
 
@@ -193,10 +186,7 @@ function showAnswer(param) {
             const randomItem = firstGif[Math.floor(Math.random() * firstGif.length)];
             const source = randomItem.embed_url;
             gif.src = source;
-            // console.log(source);
-
-            console.log(randomItem);
-
+            $(gif).fadeIn(2000);
         });
     }
 
@@ -214,9 +204,7 @@ function showAnswer(param) {
             const randomItem = firstGif[Math.floor(Math.random() * firstGif.length)];
             const source = randomItem.embed_url;
             gif.src = source;
-
-            console.log(randomItem);
-
+            $(gif).fadeIn(2000);
         });
     }
 
@@ -267,12 +255,8 @@ frank.addEventListener("click", selectChoice);
 
 
 
-gif.addEventListener("click", function(){
-       
-});
 
 
-const apiKey = "6htGmGphbh72Smi9RnaAh8E7hFZQwtN0";
 
 
 
