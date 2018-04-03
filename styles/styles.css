@@ -188,6 +188,7 @@ button:first-child{
 button:hover{
     border: 2px solid blue;
     color: blue;
+    cursor: pointer;
 }
 
 .deco{
