@@ -9,76 +9,81 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,400i,700" rel="stylesheet">
 </head>
 <body>
-    <main>
-        <!-- Wrapper -->
-        <div class="wrapper">
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <!-- Header -->
+        <header>
 
-            <header>
-                <div class="main-logo">
-                    <div class="seinfeld-logo">
-                        <img src="assets/seinfeld-logo.png" alt="seinfeld logo">
-                    </div>
-                    <h1>Quotable Quiz</h1>
+            <!-- Timer -->
+            <div class="timer">
+                    <span id="seconds"></span>
+            </div>
+
+            <!-- Seinfeld Logo -->
+            <div class="main-logo">
+                <div class="seinfeld-logo">
+                    <img src="assets/seinfeld-logo.png" alt="seinfeld logo">
                 </div>
-            </header>
+                <h1>Who Said It?</h1>
+            </div>
 
             <!-- Points Counter -->
             <div class="score-container">
                 <div class="score">
-                    <p>Score: <span class="score-number"> 0</span></p>
-                </div>
-            </div>
-
-              
-
-                <!-- Timer -->
-                <div class="timer">
-                    <p>
-                        <span id="seconds"></span>
+                    <p>Score:
+                        <span class="score-number"> 0</span>
                     </p>
                 </div>
-        
+            </div>
+        </header>
+        <!-- ./Header -->
 
-            
-                <!-- Gif -->
-                <iframe id="gif" src="https://giphy.com/embed/Xg5DdPfnvLd3W" width="480" height="360" frameBorder="0" allowFullScreen></iframe>
-
-              
-                <!-- Random Quote -->
-                <div class="quote-container">
-                    <div>
-                        <i class="fas fa-quote-left"></i>
-                        <quoteblock id="text"></quoteblock>
-                    </div>
-                        <p class="citation"></p>
-                </div>
-
-                <button id="quote-btn">Get Quote </button>
-        
-                
-                <!-- <i class="fas fa-sync-alt"></i> -->
-
-                <!-- <h2>Who said it?</h2> -->
-                
-              
-                
-                <!-- User Selection -->
-                <div class="button-container">
-                    <button id="elaine" class="answer-btn">Elaine</button>
+        <!-- Main -->
+       <main>
+           <!-- Gif -->
+           <div class="gif-container">
+               <iframe id="gif" src="https://giphy.com/embed/Xg5DdPfnvLd3W" width="480" height="360" frameBorder="0" allowFullScreen></iframe>
+           </div>
+    
+           
+           <!-- Random Quote -->
+           <div class="quote-container">
+               <div id="quotation">
+                   <i class="fas fa-quote-left"></i>
+                   <quoteblock id="text"></quoteblock>
+               </div>
+                <p class="citation"></p>
+           </div>
+    
+           
+           
+           <!-- User Selection -->
+           <div class="button-container">
+               <!-- Quote Button -->
+                <button id="quote-btn">Get Quote </button>  
+                <!-- Answer Buttons -->
+                <div class="answers">
+                    <button id="elaine" class="answer-btn">Elaine
+                        <div class="deco">
+                            <img src="assets/left-lower-raster.png" alt="">
+                        </div>
+                    </button>
+                    
                     <button id="george" class="answer-btn">George</button>
                     <button id="kramer" class="answer-btn">Kramer</button>
                     <button id="jerry" class="answer-btn">Jerry</button>
                     <button id="newman" class="answer-btn">Newman</button>
                     <button id="frank" class="answer-btn">Frank</button>
-                </div>
-
-
-                <footer>
-                    <p class="credits">Quotable Seinfeld was made using <a href="https://seinfeld-quotes.herokuapp.com/">Seinfeld Quotes API</a> and <a href="https://developers.giphy.com/docs/">Giphy API</a></p>
-                </footer>
-            </div>
-            <!-- ./wrapper -->
-        </main>
+                </div>      
+           </div>
+       </main>
+        <!-- ./main  -->
+    
+        <footer>
+            <p class="credits">Quotable Seinfeld was made using <a href="https://seinfeld-quotes.herokuapp.com/">Seinfeld Quotes API</a> and <a href="https://developers.giphy.com/docs/">Giphy API</a></p>
+        </footer>
+    </div>
+    <!-- ./wrapper -->
         
     
     <!-- jQuery must always be above -->

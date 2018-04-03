@@ -9,6 +9,8 @@ const button = document.querySelectorAll('.answer-btn');
 const timer = document.querySelector('#seconds');
 const gif = document.querySelector('#gif');
 const quote = document.querySelector('#text');
+const quotation = document.querySelector('#quotation');
+const container = document.querySelector('.quote-container');
 const citation = document.querySelector('.citation');
 const apiKey = "6htGmGphbh72Smi9RnaAh8E7hFZQwtN0";
 
@@ -25,10 +27,11 @@ function getQuote(e){
     e.preventDefault;
 
     // Reset for Button and Gifs
-    $(gif).fadeOut();
-    $(timer).fadeIn(2000);
+    $(gif).remove();
+    $(timer).show();
     $(quote).show();
     $(button).removeClass('result active');
+    $(citation).hide();
     
 
    
@@ -51,7 +54,7 @@ function getQuote(e){
         const character = selectedQuotes[random].author;
         const season = selectedQuotes[random].season;
         const episode = selectedQuotes[random].episode;
-        const finalQuote = `- ${character}, Season ${season}, Episode ${episode}`;
+        const finalQuote = `${character}, Season ${season}, Episode ${episode}`;
 
         // display finalQuote onto the page issuing innerHTML
         quote.innerHTML = randomQuote;
@@ -59,23 +62,24 @@ function getQuote(e){
         
 
         setTimeout(function(){
-            let countdown = 11;
-            $(citation).hide(finalQuote);
+            let countdown = 6;
+           
     
             const interval = setInterval(function () {
                 countdown--;
                 timer.innerHTML = countdown;
                
-                
-    
                 if (countdown === 0) {
                     clearInterval(interval);
+                    $(timer).hide();
                     showAnswer(character); 
-                    $(timer).fadeOut(1000);
-                    // $(quote).hide(quote);
-                    $('.fa-quote-left').hide('.fa-quote-left');
-                    $(citation).show(finalQuote);
+                    $(quote).hide();
+                    $('.fa-quote-left').hide();
+                    $(citation).fadeIn(1000);
                     citation.innerHTML = finalQuote;
+                    $(quotation).append(gif);
+                    $(button).removeClass('active');
+                    let countdown = 6;
                 }
             }, 1000); 
         }), 1000;
@@ -126,7 +130,6 @@ function showAnswer(param) {
 
             elaineData = res.data;
             firstGif = elaineData.map(gif => gif);
-
             const randomItem = firstGif[Math.floor(Math.random() * firstGif.length)];
             $(randomItem).fadeIn();
             const source = randomItem.embed_url;
