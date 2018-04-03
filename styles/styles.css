@@ -208,8 +208,9 @@ footer{
     text-align: center;
     margin-top: 50px;
     padding: 10px 0;
-    /* position: fixed;
-    bottom: 0; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
 }
 
 .credits{
@@ -219,6 +220,11 @@ footer{
 
 .credits a{
     border-bottom: 1px solid black;
+}
+
+.credit{
+    width: 120px;
+    display: inline-block;
 }
 
 
