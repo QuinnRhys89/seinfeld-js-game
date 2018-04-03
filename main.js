@@ -28,7 +28,7 @@ function getQuote(e){
 
     // Reset for Button and Gifs
     $(gif).remove();
-    $(timer).show();
+    $(timer).show(1500);
     $(quote).show();
     $(button).removeClass('result active');
     $(citation).hide();
@@ -94,13 +94,13 @@ function showAnswer(param) {
     const btncontainer = document.querySelector('button-container');
     const result = document.querySelector(`#${lowercaseCharacter}`);
     
-    const elaineGif = "https://api.giphy.com/v1/gifs/search?q=elaine+benes+julia+louis-dreyfus&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=20";
+    const elaineGif = "https://api.giphy.com/v1/gifs/search?q=elaine+benes+julia+louis-dreyfus&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=40";
 
-    const jerryGif = "https://api.giphy.com/v1/gifs/search?q=jerry+seinfeld&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=20";
+    const jerryGif = "https://api.giphy.com/v1/gifs/search?q=jerry+seinfeld&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=40";
     
-    const georgeGif = "https://api.giphy.com/v1/gifs/search?q=george+costanza+jason+alexander&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=20";
+    const georgeGif = "https://api.giphy.com/v1/gifs/search?q=george+costanza+jason+alexander&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=40";
 
-    const kramerGif = "https://api.giphy.com/v1/gifs/search?q=cosmo+kramer&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=20";
+    const kramerGif = "https://api.giphy.com/v1/gifs/search?q=cosmo+kramer&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=30";
 
     const frankGif = "https://api.giphy.com/v1/gifs/search?q=frank+costanza+seinfeld&api_key=6htGmGphbh72Smi9RnaAh8E7hFZQwtN0&limit=10";
 
