@@ -39,7 +39,6 @@ body{
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
-    border: 1px solid black;
     height: 100%;
 }
 
@@ -131,12 +130,12 @@ main{
     font-size: 25px;
     height: 500px;
     margin-top: 20px;
+    width: 80%;
 }
 
-.quotation{
+.quote-container div{
     display: flex;
     margin: 20px;
-    width: 80%;
 }
 
 .fa-quote-left{
@@ -173,7 +172,6 @@ iframe{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* width: 100%; */
 }
 
 .answers{
@@ -185,6 +183,7 @@ iframe{
     color: green;
     border: 2px solid green;
     box-shadow: 5px 5px;
+    margin-top: 10px;
 }
 
 button{
@@ -221,7 +220,6 @@ button:hover{
 /************ FOOTER STYLES ************/
 
 footer{
-    border-top: 1px solid black;
     width: 100%;
     text-align: center;
     margin-top: 50px;
@@ -279,9 +277,9 @@ footer{
 /* 
 Portrait tablet and small desktops */
 @media (max-width: 940px){
-    body{
+    /* body{
         background: lightblue;
-    }
+    } */
 
     .answers{
         justify-content: space-between;
@@ -297,9 +295,7 @@ Portrait tablet and small desktops */
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px){
-    body{
-        background: orange;
-    }
+  
 }
 
 /* Mobile - Landscape phones and down */
@@ -310,12 +306,7 @@ Portrait tablet and small desktops */
     }
 
     body{
-        background: purple;
         height: auto;
-    }
-
-    .quote-container{
-        /* height: 300px; */
     }
 
     iframe{
