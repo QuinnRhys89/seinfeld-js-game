@@ -127,8 +127,8 @@ function showAnswer(param) {
             dataType: "JSON",
             method: "GET"
         }).then(function (res) {
-
             elaineData = res.data;
+            console.log(elaineData);
             firstGif = elaineData.map(gif => gif);
             const randomItem = firstGif[Math.floor(Math.random() * firstGif.length)];
             $(randomItem).fadeIn();
@@ -147,6 +147,7 @@ function showAnswer(param) {
 
 
             kramerData = res.data;
+            console.log(kramerData);
             firstGif = kramerData.map(gif => gif);
 
             const randomItem = firstGif[Math.floor(Math.random() * firstGif.length)];
@@ -166,7 +167,6 @@ function showAnswer(param) {
 
             jerryData = res.data;
             firstGif = jerryData.map(gif => gif);
-
             const randomItem = firstGif[Math.floor(Math.random() * firstGif.length)];
             const source = randomItem.embed_url;
             gif.src = source;
