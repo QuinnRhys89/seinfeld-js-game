@@ -25,7 +25,6 @@ body{
     padding: 0;
     font-family: 'Josefin Sans', sans-serif;
     background: khaki;
-    /* padding-top: 50px; */
     height: 100vh;
 
 }
@@ -72,7 +71,6 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
 }
 
 h1{
@@ -147,7 +145,7 @@ main{
     font-size: 16px;
     font-weight: 600;
     text-align: center;
-    margin-top: -150px;
+    margin-top: -120px;
 }
 
 /* gif */
@@ -276,33 +274,57 @@ footer{
 /************ RESPONSIVE STYLES ************/
 /* 
 Portrait tablet and small desktops */
-@media (max-width: 940px){
-    /* body{
-        background: lightblue;
-    } */
-
-    .answers{
-        justify-content: space-between;
-        max-width: 600px;
+@media (max-width: 865px){
+    header{
+        flex-direction: column;
+        align-items: space-between;
     }
 
-    .answer-btn{
-        width: 30%;
-        margin: 0;
-        margin-bottom: 20px;
-    }
+    footer{
+            margin-top: 60px;
+        }
 }
 
 /* Landscape phone to portrait tablet */
-@media (max-width: 768px){
-  
+@media (max-width: 783px){
+        h1{
+            width: 100%;
+        }
+        .answers{
+            justify-content: space-between;
+            max-width: 600px;
+        }
+        
+        .answer-btn{
+            width: 30%;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+    
+        #text{
+        font-size: 22px;
+        }
+        
+        
+
+        .timer{
+            position: absolute;
+            top: 50px;
+            right: 0;
+        }
+
+        h1{
+            width: 50%;
+        }
+
+           
 }
 
 /* Mobile - Landscape phones and down */
 @media (max-width: 480px){
-
-    header{
+    .main-logo{
         flex-direction: column;
+        text-align: center;
     }
 
     body{
@@ -314,13 +336,49 @@ Portrait tablet and small desktops */
         height: 300px;
     }
 
-    .answers{
-        justify-content: center;
+    .quote-container,
+    .quotation{
+        width: 100%;
     }
 
-    .answer-btn{
-        width: 80%;
-        font-size: 25px;
+    #text{
+        font-size: 18px;
     }
+    .score{
+        padding: 15px 20px;
+    }
+    .score p{
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .quote-container{
+        height: 350px;
+        margin: 0;
+    }
+
+    main{
+        width: auto;
+    }
+
+    .credits{
+       line-height: 1rem;
+    }
+
+    h1{
+        width: 100%;
+    }
+
+    .timer{
+        position: initial;
+        order: 3;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    footer{
+        margin-top: 20px;
+    }
+    
   
 }

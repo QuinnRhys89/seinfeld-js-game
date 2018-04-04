@@ -46,7 +46,7 @@ function getQuote(e){
         // variable made to reference the data from the entire array
         const allQuotes = res.quotes;
         // Used filter method to iterate over all quotes and select ones authored by Elaine
-        const selectedQuotes = allQuotes.filter(quote => quote.author === "Elaine" || quote.author === "Jerry" || quote.author === "Kramer" || quote.author === "George" || quote.author === "Newman" || quote.author === "Frank Costanza");
+        const selectedQuotes = allQuotes.filter(quote => quote.author === "Elaine" || quote.author === "Jerry" || quote.author === "Kramer" || quote.author === "George" || quote.author === "Newman" || quote.author === "Frank");
         // used the Math.floor/Math.random methods to randomize the index numbers from the filtered results
         const random = Math.floor(Math.random() * (selectedQuotes.length));
 
@@ -127,6 +127,7 @@ function showAnswer(param) {
             dataType: "JSON",
             method: "GET"
         }).then(function (res) {
+
             elaineData = res.data;
             console.log(elaineData);
             firstGif = elaineData.map(gif => gif);
@@ -147,7 +148,7 @@ function showAnswer(param) {
 
 
             kramerData = res.data;
-            console.log(kramerData);
+            console.log(elaineData);
             firstGif = kramerData.map(gif => gif);
 
             const randomItem = firstGif[Math.floor(Math.random() * firstGif.length)];
@@ -167,6 +168,7 @@ function showAnswer(param) {
 
             jerryData = res.data;
             firstGif = jerryData.map(gif => gif);
+
             const randomItem = firstGif[Math.floor(Math.random() * firstGif.length)];
             const source = randomItem.embed_url;
             gif.src = source;
