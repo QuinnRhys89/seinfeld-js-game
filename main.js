@@ -80,8 +80,6 @@ function getQuote(e){
                     citation.innerHTML = finalQuote;
                     $(".reveal").prepend(gif);
                     $(button).removeClass('active');
-                    
-                   
                 }
             }, 1000); 
 
@@ -244,7 +242,7 @@ function showAnswer(param) {
     if (twoClasses) {
         score.innerHTML++;
     } else {
-        score.innerHTML--
+        score.innerHTML === null;
     }
 
 }
