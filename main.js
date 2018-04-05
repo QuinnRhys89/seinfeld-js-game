@@ -13,6 +13,7 @@ const quotation = document.querySelector('#quotation');
 const container = document.querySelector('.quote-container');
 const citation = document.querySelector('.citation');
 const apiKey = "6htGmGphbh72Smi9RnaAh8E7hFZQwtN0";
+let countdown = 6 
 
 // Smooth Scroll
 $('a').smoothScroll({
@@ -28,11 +29,12 @@ function getQuote(e){
 
     // Reset for Button and Gifs
     $(gif).remove();
-    $(timer).show(1500);
     $(quote).show();
     $(button).removeClass('result active');
     $(citation).hide();
-    
+    $(container).removeClass("flex-off");
+    timer.innerHTML = countdown - 1;
+    $(timer).show();
 
    
     // Ajax call to Seinfeld API
@@ -49,7 +51,6 @@ function getQuote(e){
         const selectedQuotes = allQuotes.filter(quote => quote.author === "Elaine" || quote.author === "Jerry" || quote.author === "Kramer" || quote.author === "George" || quote.author === "Newman" || quote.author === "Frank");
         // used the Math.floor/Math.random methods to randomize the index numbers from the filtered results
         const random = Math.floor(Math.random() * (selectedQuotes.length));
-
         const randomQuote = selectedQuotes[random].quote;
         const character = selectedQuotes[random].author;
         const season = selectedQuotes[random].season;
@@ -60,11 +61,11 @@ function getQuote(e){
         quote.innerHTML = randomQuote;
         $('.fa-quote-left').show('.fa-quote-left');
         
-
+         // Countdown Timer
         setTimeout(function(){
-            let countdown = 6;
+            let countdown = 5;
+            
            
-    
             const interval = setInterval(function () {
                 countdown--;
                 timer.innerHTML = countdown;
@@ -77,11 +78,13 @@ function getQuote(e){
                     $('.fa-quote-left').hide();
                     $(citation).fadeIn(1000);
                     citation.innerHTML = finalQuote;
-                    $(quotation).append(gif);
+                    $(".reveal").prepend(gif);
                     $(button).removeClass('active');
-                    let countdown = 6;
+                    
+                   
                 }
             }, 1000); 
+
         }), 1000;
     });
 }
@@ -129,13 +132,13 @@ function showAnswer(param) {
         }).then(function (res) {
 
             elaineData = res.data;
-            console.log(elaineData);
             firstGif = elaineData.map(gif => gif);
             const randomItem = firstGif[Math.floor(Math.random() * firstGif.length)];
             $(randomItem).fadeIn();
             const source = randomItem.embed_url;
             gif.src = source;
             $(gif).fadeIn(2000);
+            $(container).addClass("flex-off");
         });
     }
 
@@ -145,17 +148,13 @@ function showAnswer(param) {
             dataType: "JSON",
             method: "GET"
         }).then(function (res) {
-
-
             kramerData = res.data;
-            console.log(elaineData);
             firstGif = kramerData.map(gif => gif);
-
             const randomItem = firstGif[Math.floor(Math.random() * firstGif.length)];
-
             const source = randomItem.embed_url;
             gif.src = source;
             $(gif).fadeIn(2000);
+            $(container).addClass("flex-off");
         });
     }
 
@@ -173,6 +172,7 @@ function showAnswer(param) {
             const source = randomItem.embed_url;
             gif.src = source;
             $(gif).fadeIn(2000);
+            $(container).addClass("flex-off");
         });
     }
 
@@ -190,6 +190,7 @@ function showAnswer(param) {
             const source = randomItem.embed_url;
             gif.src = source;
             $(gif).fadeIn(2000);
+            $(container).addClass("flex-off");
         });
     }
 
@@ -207,6 +208,7 @@ function showAnswer(param) {
             const source = randomItem.embed_url;
             gif.src = source;
             $(gif).fadeIn(2000);
+            $(container).addClass("flex-off");
         });
     }
 
@@ -225,6 +227,7 @@ function showAnswer(param) {
             const source = randomItem.embed_url;
             gif.src = source;
             $(gif).fadeIn(2000);
+            $(container).addClass("flex-off");
         });
     }
 

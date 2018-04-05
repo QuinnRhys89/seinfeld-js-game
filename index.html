@@ -40,29 +40,31 @@
 
         <!-- Main -->
        <main>
-           <!-- Gif -->
-           <div class="gif-container">
-               <iframe id="gif" src="https://giphy.com/embed/Xg5DdPfnvLd3W" width="480" height="360" frameBorder="0"></iframe>
-            </div>
-            
-            
             <!-- Random Quote -->
             <div class="quote-container">
                 <div id="quotation">
                     <i class="fas fa-quote-left"></i>
-                    <quoteblock id="text"></quoteblock>
+                    <quoteblock id="text">1) Click on the button below to generate a random Seinfeld quote. <br> 2) Then place your guess by selecting a character.</quoteblock>
                 </div>
-                <p class="citation"></p>
-           </div>
-    
-           
-           
-           <button id="quote-btn">Get Quote <div class="deco">
-               <img src="assets/left-lower-raster.png" alt="">
-           </div></button>  
-           <!-- User Selection -->
-           <div class="button-container">
-               <!-- Quote Button -->
+                
+                <div class="reveal">
+                    <!-- gif container -->
+                    <iframe id="gif" src="https://giphy.com/embed/Xg5DdPfnvLd3W" height="280" frameBorder="0"></iframe>
+                    <p class="citation"></p>
+                </div>
+            </div>
+       </main>
+        <!-- ./main  -->
+
+            <!-- User Selection -->
+        <section class="button-container">
+                <!-- Quote Button -->
+                <button id="quote-btn">Get Quote
+                    <div class="deco">
+                        <img src="assets/left-lower-raster.png" alt="">
+                    </div>
+                </button>
+
                 <!-- Answer Buttons -->
                 <div class="answers">
                     <button id="elaine" class="answer-btn">Elaine</button>
@@ -71,10 +73,8 @@
                     <button id="jerry" class="answer-btn">Jerry</button>
                     <button id="newman" class="answer-btn">Newman</button>
                     <button id="frank" class="answer-btn">Frank</button>
-                </div>      
-           </div>
-       </main>
-        <!-- ./main  -->
+                </div>
+        </section>
     
         <footer>
             <p class="credits">Seinfeld: Who Said It? was made using <a href="https://seinfeld-quotes.herokuapp.com/">Seinfeld Quotes API</a> and <a href="https://developers.giphy.com/docs/">
