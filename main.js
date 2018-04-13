@@ -14,7 +14,7 @@ const container = document.querySelector('.quote-container');
 const citation = document.querySelector('.citation');
 const apiKey = "6htGmGphbh72Smi9RnaAh8E7hFZQwtN0";
 
-let countdown = 6 
+let countdown = 11 
 
 // Smooth Scroll
 $('a').smoothScroll({
@@ -64,7 +64,7 @@ function getQuote(e){
         
          // Countdown Timer
         setTimeout(function(){
-            let countdown = 5;
+            let countdown = 11;
             
            
             const interval = setInterval(function () {
