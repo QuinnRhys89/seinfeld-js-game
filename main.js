@@ -13,6 +13,7 @@ const quotation = document.querySelector('#quotation');
 const container = document.querySelector('.quote-container');
 const citation = document.querySelector('.citation');
 const apiKey = "6htGmGphbh72Smi9RnaAh8E7hFZQwtN0";
+
 let countdown = 6 
 
 // Smooth Scroll
@@ -220,7 +221,6 @@ function showAnswer(param) {
 
             newmanData = res.data;
             firstGif = newmanData.map(gif => gif);
-
             const randomItem = firstGif[Math.floor(Math.random() * firstGif.length)];
             const source = randomItem.embed_url;
             gif.src = source;

@@ -10,7 +10,29 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 .result{
     border: 2px solid red;
     color: red;
+    cursor: pointer;
+    -webkit-transition: all 1s ease-in;
+    -moz-transition: all 1s ease-in;
+    -o-transition: all 1s ease-in;
+    transition: all 1s ease-in;
 }
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.7;       
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1; 
+    }   
+    100% {
+        transform: scale(0.9);
+        opacity: 0.7;   
+    }           
+}
+
 
 /************ GLOBAL STYLES ************/
 
@@ -198,10 +220,15 @@ button:first-child{
     margin-left: 0;
 }
 
-button:hover{
+.answer-btn:hover{
     border: 2px solid blue;
     color: blue;
+    padding-top: 2px;
     cursor: pointer;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
 .deco{
@@ -242,31 +269,8 @@ footer{
 /* Animations */
 
 
-.pulse{
-    animation-name: pulse;
-    -webkit-animation-name: pulse;  
 
-    animation-duration: 2.5s;   
-    -webkit-animation-duration: 2.5s;
 
-    animation-iteration-count: infinite;
-    -webkit-animation-iteration-count: infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(0.9);
-        opacity: 0.7;       
-    }
-    50% {
-        transform: scale(1);
-        opacity: 1; 
-    }   
-    100% {
-        transform: scale(0.9);
-        opacity: 0.7;   
-    }           
-}
 
 /************ RESPONSIVE STYLES ************/
 /* 
