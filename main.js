@@ -14,7 +14,7 @@ const container = document.querySelector('.quote-container');
 const citation = document.querySelector('.citation');
 const apiKey = "6htGmGphbh72Smi9RnaAh8E7hFZQwtN0";
 
-let countdown = 11 
+
 
 // Smooth Scroll
 $('a').smoothScroll({
@@ -27,15 +27,19 @@ quoteButton.addEventListener('click', getQuote);
 // Function to Generate random quote from API and update onto page
 function getQuote(e){
     e.preventDefault;
+    
 
     // Reset for Button and Gifs
+    $(timer).show();
     $(gif).remove();
     $(quote).show();
     $(button).removeClass('result active');
     $(citation).hide();
     $(container).removeClass("flex-off");
+    let countdown = 11;
     timer.innerHTML = countdown - 1;
-    $(timer).show();
+    
+    
 
    
     // Ajax call to Seinfeld API
@@ -65,11 +69,13 @@ function getQuote(e){
          // Countdown Timer
         setTimeout(function(){
             let countdown = 11;
-            
            
             const interval = setInterval(function () {
                 countdown--;
                 timer.innerHTML = countdown;
+               
+                quoteButton.disabled = true;
+               
                
                 if (countdown === 0) {
                     clearInterval(interval);
@@ -81,6 +87,9 @@ function getQuote(e){
                     citation.innerHTML = finalQuote;
                     $(".reveal").prepend(gif);
                     $(button).removeClass('active');
+                    quoteButton.disabled = false;
+                    
+                    button.removeEventListener("click", selectChoice(e), false);
                 }
             }, 1000); 
 
@@ -228,8 +237,6 @@ function showAnswer(param) {
             $(container).addClass("flex-off");
         });
     }
-
-
 
     for (let i = 0; i < result.parentNode.children.length; i++) {
         result.parentNode.children[i].classList.remove('result');

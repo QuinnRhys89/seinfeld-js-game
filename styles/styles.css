@@ -204,6 +204,11 @@ iframe{
     margin-bottom: 20px;
 }
 
+.disabled{
+    color: lightgrey;
+    border-color: lightgrey;
+}
+
 button{
     padding: 10px;
     height: 80px;
