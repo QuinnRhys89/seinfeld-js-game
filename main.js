@@ -74,7 +74,7 @@ function getQuote(e){
                 countdown--;
                 timer.innerHTML = countdown;
                
-                quoteButton.disabled = true;
+                // quoteButton.disabled = true;
                
                
                 if (countdown === 0) {
@@ -87,9 +87,9 @@ function getQuote(e){
                     citation.innerHTML = finalQuote;
                     $(".reveal").prepend(gif);
                     $(button).removeClass('active');
-                    quoteButton.disabled = false;
+                    // quoteButton.disabled = false;
                     
-                    button.removeEventListener("click", selectChoice(e), false);
+                    // button.removeEventListener("click", selectChoice(e), false);
                 }
             }, 1000); 
 
