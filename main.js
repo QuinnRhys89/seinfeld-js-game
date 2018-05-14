@@ -36,8 +36,8 @@ function getQuote(e){
     $(button).removeClass('result active');
     $(citation).hide();
     $(container).removeClass("flex-off");
-    let countdown = 11;
-    timer.innerHTML = countdown - 1;
+
+    // timer.innerHTML = countdown - 1;
     
     
 
@@ -67,19 +67,20 @@ function getQuote(e){
         $('.fa-quote-left').show('.fa-quote-left');
         
          // Countdown Timer
-        setTimeout(function(){
-            let countdown = 11;
-           
+    
+            let countdown = 6;
+            console.log(countdown);
             const interval = setInterval(function () {
                 countdown--;
                 timer.innerHTML = countdown;
                
-                // quoteButton.disabled = true;
+                quoteButton.disabled = true;
                
                
                 if (countdown === 0) {
+                    
                     clearInterval(interval);
-                    $(timer).hide();
+                    // $(timer).hide();
                     showAnswer(character); 
                     $(quote).hide();
                     $('.fa-quote-left').hide();
@@ -87,13 +88,11 @@ function getQuote(e){
                     citation.innerHTML = finalQuote;
                     $(".reveal").prepend(gif);
                     $(button).removeClass('active');
-                    // quoteButton.disabled = false;
+                    quoteButton.disabled = false;
                     
                     // button.removeEventListener("click", selectChoice(e), false);
                 }
             }, 1000); 
-
-        }), 1000;
     });
 }
 
